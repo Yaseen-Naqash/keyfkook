@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} Keyf Kook {% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'media/images/logo.png' %}" type="image/png">
+
+
+    {% block extra_css %}{% endblock %}
+
+
+</head>
+<body>
+    
+    <nav>
+      <div class="title">
+        <h2>خانه بازی بزرگسالان</h2>
+        <img src="{% static 'media/images/logo-type.png' %}" alt="">
+      </div>
+    </nav>
+
+
+
+    <main>
+        {% if messages %}
+        <div class="messages" id="messages">
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" role="alert">
+              <h3 style="margin: 0 auto;">{{ message }}</h3>
+            </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+
+        {% block content %}
+
+        <h1>this page has no content</h1>
+
+        {% endblock %}
+
+
+
+    </main>
+
+
+    <!-- Footer -->
+    <!-- <footer>
+        <p>© 2024 My Website. All rights reserved.</p>
+    </footer> -->
+
+
+    {% block extra_js %}{% endblock %}
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

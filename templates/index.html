@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    Keyf Kook
+
+{% endblock %}
+
+{% load static %}
+
+
+{% block extra_css %}
+    <style></style>
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+
+    <section class="hero-holder">
+        <img src="{% static 'media/images/board.png' %}" alt="">
+
+        <div class="link-holder">
+            <div class="link-group">
+                <a class="right=link" href="">منو کافه</a>
+                <a class="left-link" href="{% url 'not_built_url' %}">فروشگاه</a>
+            </div>
+
+            <div class="link-group">
+                <a class="right=link" href="">اتاق فرار</a>
+                <a class="left-link" href="">آموزش بازی</a>
+            </div>
+
+            <div class="link-group">
+                <a class="right=link" href="">تلگرام</a>
+                <a class="left-link" href="">اینستاگرام</a>
+            </div>
+
+            <div class="link-group">
+                <a class="right=link" href="{% url 'not_built_url' %}">فال حافظ</a>
+                <a class="left-link" href="{% url 'not_built_url' %}">پیشنهاد بازی</a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="mobile-hero-holder">
+
+        <div class="mobile-link-holder-left">
+            <a href="{% url 'menu_url' %}">منو کافه</a>
+            <img src="{% static 'media/images/logo.png' %}" alt="">
+        </div>
+
+        <div class="mobile-link-holder-right">
+            <a href="{% url 'not_built_url' %}">فروشگاه</a>
+            <img src="{% static 'media/images/logo.png' %}" alt="">
+
+        </div>
+        
+        <div class="mobile-link-holder-left">
+            <a href="">اتاق فرار</a>
+            <img src="{% static 'media/images/logo.png' %}" alt="">
+
+        </div>
+
+        <div class="mobile-link-holder-right">
+            <a href="">آموزش بازی</a>
+            <img src="{% static 'media/images/logo.png' %}" alt="">
+
+        </div>
+
+        <div class="mobile-link-holder-left">
+            <a href="">تلگرام</a>
+            <img src="{% static 'media/images/logo.png' %}" alt="">
+
+        </div>
+
+        <div class="mobile-link-holder-right">
+            <a href="">اینستاگرام</a>
+            <img src="{% static 'media/images/logo.png' %}" alt="">
+
+        </div>
+
+        <div class="mobile-link-holder-left">
+            <a href="{% url 'not_built_url' %}">فال حافظ</a>
+            <img src="{% static 'media/images/logo.png' %}" alt="">
+
+        </div>
+        
+        <div class="mobile-link-holder-right">
+            <a href="{% url 'not_built_url' %}">پیشنهاد بازی</a>
+            <img src="{% static 'media/images/logo.png' %}" alt="">
+
+        </div>
+
+        <img style="width: 150px; rotate: 8deg;" src="{% static 'media/images/board.png' %}" alt="">
+
+
+    </section>
+
+
+{% endblock %}
+
+
+{% block extra_js %}
+    <script></script>
+{% endblock %}
