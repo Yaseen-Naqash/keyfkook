@@ -12,46 +12,63 @@
 
 
 {% block content %}
-
     <section class="topic-menu-holder">
 
+        {% for topic in topics %}
+
         <div class="menu-topic">
-            <a href="">
-                <img src="{% static 'media/images/topics/coffee-topic.png' %}" alt="not loaded">
+            <a href="#{{ topic.title }}">
+                <img src="{{ topic.topic_image.url }}" alt="{{ topic.title }}">
             </a>
         </div>
+
+        {% endfor %}
 
     </section>
 
 
+
+    {% for topic in topics %}
     <!-- topic -->
     <hr style="margin: 20px 0px;">
-    <div class="topic">
+    <div class="topic" id="{{ topic.title }}">
         <div class="header">
-            <h1>قهوه</h1>
-            <img src="{% static 'media/images/logo.png' %}" alt="">
-            <img src="{% static 'media/images/topics/coffee.png' %}" alt="">
+            <h1>{{ topic.title }}</h1>
+            <!-- <img src="{% static 'media/images/logo.png' %}" alt=""> -->
+            <img src="{{ topic.topic_icon.url }}" alt="">
         </div>
     </div>
     <div class="topic-items">
+
+
+        {% for item in topic.items.all %}
+
+        {% if item.visiable %}
         <!-- item -->
         <div class="item">
-            <img src="{% static 'media/images/items/cappuccino.jpg' %}" alt="image not loaded">
-            <h1>کاپوچینو</h1>
+            <img src="{{ item.item_image.url }}" alt="{{ item.title }}">
+            <h1>{{ item.title }}</h1>
             <hr style="margin: 10px 0px; width: 80%;">
             <div class="description">
-                <p>قهوه, شیر, سیروپ دلخواه</p>
+                <p>
+                    {{ item.description }}
+                </p>
 
             </div>
             <div class="price-box">
-                <h2 class="price">70,000</h2>
+                <h2 class="price">{{ item.price }}</h2>
                 <h2>تومان</h2>
             </div>
 
         </div>
+        {% endif %}
         <!-- end of item -->
+
+        {% endfor %}
+
     </div>
     <!-- end of topic -->
+     {% endfor %}
 
 
     <a href="#top">

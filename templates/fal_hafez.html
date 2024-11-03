@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    KeyfKook | فال حافط
+
+{% endblock %}
+{% load static %}
+
+
+{% block extra_css %}
+    <style></style>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="fal-box">
+        <h1>فال حافظ</h1>
+        <h3>قزل شماره <div class="price" style="text-align: center;">{{ poem_number }}</div></h3>
+        <p class="fal-hafez-poem" style="text-align: center;">
+            {{ poem|linebreaksbr }}
+
+        </p>
+        <hr style="width: 90%; margin: 20px 0px;">
+        <h3>معنی فال شما</h3>
+        <p class="fal-hafez-poem">
+            {{ text|linebreaksbr }}
+        </p>
+    </div>
+
+
+{% endblock %}
+
+
+{% block extra_js %}
+    <script></script>
+{% endblock %}
